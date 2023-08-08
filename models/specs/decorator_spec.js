@@ -17,8 +17,19 @@ describe('Decorator', function() {
 
     it('should be able to add a can to the stock', function() {
         const paintCan = new PaintCan(10);
-        console.log(paintCan)
         decorator.addCanToStock(paintCan);
         assert.deepStrictEqual([paintCan], decorator.paintStock);
-    })
+    });
+
+    it('should be able to calculate the total litres in stock', function() {
+        const paintCan = new PaintCan(10);
+        decorator.addCanToStock(paintCan);
+        decorator.addCanToStock(paintCan);
+        decorator.addCanToStock(paintCan);
+        decorator.addCanToStock(paintCan);
+        decorator.addCanToStock(paintCan);
+        console.log(decorator.paintStock)
+        const actual = decorator.calcLitresInStock();
+        assert.strictEqual(actual, 50);
+    });
 });
