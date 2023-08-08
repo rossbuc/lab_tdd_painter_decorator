@@ -1,6 +1,10 @@
 class Decorator {
     constructor() {
-        this.paintStock = 0;
+        this.paintStock = [];
+    };
+
+    addCanToStock(paintCan) {
+        this.paintStock.push(paintCan);
     };
 };
 
