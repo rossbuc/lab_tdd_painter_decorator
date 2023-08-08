@@ -29,7 +29,7 @@ class Decorator {
     paintRoom(room) {
         if (this.canPaintRoom) {
             console.log("Youre painting the room")
-            room.painted == true;
+            room.painted = true;
             let requiredVolume = room.area;
             let cansUsed = [];
 

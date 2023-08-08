@@ -60,6 +60,7 @@ describe('Decorator', function() {
             decorator.addCanToStock(paintCan);
             decorator.paintRoom(room);
             const actual = decorator.paintStock;
+            console.log(room.painted)
             assert.deepStrictEqual(actual, [paintCan]);
         })
     });
