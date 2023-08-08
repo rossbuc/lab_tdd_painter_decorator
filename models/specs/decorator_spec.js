@@ -35,7 +35,6 @@ describe('Decorator', function() {
             decorator.addCanToStock(paintCan);
             decorator.addCanToStock(paintCan);
             decorator.addCanToStock(paintCan);
-            console.log(decorator.paintStock)
             const actual = decorator.calcLitresInStock();
             assert.strictEqual(actual, 50);
         });
@@ -43,14 +42,25 @@ describe('Decorator', function() {
 
     describe('rooms', function() {
         let room;
+        let paintCan;
 
         this.beforeEach( function() {
             room = new Room("Living Room", 120);
+            paintCan = new PaintCan(60);
         });
 
         it('should be able to determine if it can paint a room or not', function() {
             const actual = decorator.canPaintRoom(room);
             assert.strictEqual(actual, false);
+        });
+
+        it('should be able to paint a room', function() {
+            decorator.addCanToStock(paintCan);
+            decorator.addCanToStock(paintCan);
+            decorator.addCanToStock(paintCan);
+            decorator.paintRoom(room);
+            const actual = decorator.paintStock;
+            assert.deepStrictEqual(actual, [paintCan]);
         })
     });
 });
