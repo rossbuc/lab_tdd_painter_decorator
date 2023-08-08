@@ -11,4 +11,8 @@ PaintCan.prototype.checkEmpty = function() {
     };
 };
 
+PaintCan.prototype.emptySelf = function() {
+    this.volume = 0;
+};
+
 module.exports = PaintCan
