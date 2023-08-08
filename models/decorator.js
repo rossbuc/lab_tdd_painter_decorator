@@ -15,6 +15,16 @@ class Decorator {
         };
         return litresInStock;
     };
+
+    canPaintRoom(room) {
+        let litresInStock = this.calcLitresInStock();
+        if (litresInStock >= room.area) {
+            return true;
+        }
+        else {
+            return false
+        };
+    }
 };
 
 module.exports = Decorator
